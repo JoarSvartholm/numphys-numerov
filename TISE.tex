@@ -1,0 +1,24 @@
+\section{Time independent Schrödinger equation}
+
+The time independent Shrödinger equation(TISE) is defined as
+
+\begin{equation}
+  \label{eq:TISE}
+  \left[ -\frac{\hbar^2}{2m} \frac{\dn^2}{\dn x^2} + \mathcal V(x) \right]\Psi(x) = E\Psi(x) \Longleftrightarrow \frac{\dn^2}{\dn x^2}\Psi(x) + \frac{2m}{\hbar^2}\left[E - \mathcal V(x) \right] \Psi(x) = 0.
+\end{equation}
+
+Thus, by defining
+
+\begin{subequations}
+  \begin{align}
+    k_{j}^2 &= \frac{2m}{\hbar^2}(E-\mathcal V(x_j)) \\
+    Y_j &= \left(1 + \frac{m h^2}{6 \hbar^2}(E-\mathcal V(x_j))\right) \Psi(x_j)
+  \end{align}
+\end{subequations}
+
+in Eq. \eqref{eq:TISE}, Numerov's iteration scheme will be
+
+\begin{equation}
+  \label{eq:numerovTISE}
+  Y_{j+1} = Y_j \left( 2 - \frac{2m h^2}{\hbar^2} \frac{(E-\mathcal V(x_j))}{1+ \frac{mh^2}{6\hbar^2}(E-\mathcal V(x_j))} \right) - Y_{j-1}
+\end{equation}
