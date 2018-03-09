@@ -1,0 +1,71 @@
+\section{The Morse potential}
+
+Let us now consider the Morse potential
+
+\begin{equation}
+  \label{eq:morse}
+  \mathcal V(R) = E_B \left[ 1-e^{-a(R-R_e)} \right]^2
+\end{equation}
+
+where is the distance between two atoms, $R_e$ is the equillibrium distance, $E_B$ is the binding energy and $a$ is a scaling constant for the bond stiffness. In the center of mass frame, it is better to use spherical coordinates for the wave function, $\Psi(\m R) = \Psi(R)Y(\theta,\phi)$. Taking the first orbital $Y = Y_0^0 = 1/\sqrt{4\pi}$, the problem reduces to a one dimensional problem since the orbital derivatives in the spherical laplacian derives to zero. Using the substitution $\psi (R) = R\Psi(R)$, TISE will reduce to
+
+\begin{equation}
+  \label{eq:spherTISE}
+  \left[ -\frac{\hbar^2}{2\mu} \frac{\dn^2}{\dn R^2} + \mathcal V(R) \right]\psi(R) = E\psi(R),
+\end{equation}
+
+where $\mu$ is the reduced mass and $\mathcal V(R)$ is the potential in Eq. \eqref{eq:morse}.
+
+Since the energy levels are not known in opposite to the harmonic potential a good guess for the energy levels are needed in order to find the correct eigen energies and its corresponding wavefunction. In order to do that we make a Taylor expansion of Eq. \eqref{eq:morse} around the equillibrium distance $R_e$
+
+\begin{equation}
+  \label{eq:taylor}
+  \mathcal V(R) = \mathcal V(R_e) + (R-R_e)\left(\frac{\dn \mathcal V}{\dn R}\right)_{R_e} + \frac{(R-R_e)^2}{2}\left(\frac{\dn^2 \mathcal V}{\dn R^2}\right)_{R_e} + \mathcal O((R-R_e)^3).
+\end{equation}
+
+At equilibrium, both the function and its derivative is zero, so only the third term is nonzero and thus, by neglecting higher order terms the potential can be approximated as
+
+\begin{equation}
+  \label{eq:morseApprox}
+  \begin{split}
+  \mathcal V(R) &\approx \frac{(R-R_e)^2}{2} E_B \frac{\dn^2}{\dn x^2} \left[ 1-e^{-ax} \right]^2|_{x=0} \\
+   & = \frac{(R-R_e)^2}{2} E_B 2 \frac{\dn}{\dn x} \left[1-e^{-ax}\right] a e^{-ax} |_{x=0}\\
+   & = a(R-R_e)^2 E_B \left[ -a e^{-ax} +2a e^{-ax} \right]_{x=0} \\
+   & = E_B a^2 (R-R_e)^2
+  \end{split}
+\end{equation}
+
+when comparing this to the harmonic potential Eq. \eqref{eq:harm} it is clear that
+
+\begin{equation*}
+  \frac{\mu \omega^2}{2} = E_B a^2
+\end{equation*}
+
+must hold and the harmonic frequency can thus be written as
+
+\begin{equation}
+  \label{eq:omega}
+  \omega = a \sqrt{\frac{2 E_B}{\mu}}
+\end{equation}
+
+For the harmonic oscillator, we know that the eigen energies are
+
+\begin{equation*}
+  E_n = \hbar \omega \left(n + \frac{1}{2} \right).
+\end{equation*}
+
+For the anharmonic oscillator we are considering, we can approximate the eigen energies using Eq. \eqref{eq:omega} and replacing the mass with the reduced mass to obtain
+
+\begin{equation}
+  \label{eq:enegiesMorse}
+  \tilde{E_n} = \hbar a \sqrt{\frac{2 E_B}{\mu}} \left( n + \frac{1}{2}\right).
+\end{equation}
+
+The ground state energy and the spacing is thus
+
+\begin{equation*}
+  \begin{split}
+    \tilde{E_0} & = \hbar a \sqrt{\frac{ E_B}{2\mu}} \\
+    \Delta \tilde{E} & = \hbar a \sqrt{\frac{2 E_B}{\mu}}
+  \end{split}
+\end{equation*}

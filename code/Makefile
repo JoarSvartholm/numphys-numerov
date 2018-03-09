@@ -1,8 +1,8 @@
 CC = gcc
 LOADLIBES =  -L/usr/local/lib -lgsl -lgslcblas -lm
 CFLAGS = -g -I/usr/local/include
-OBJS =
-DEPS = 
+OBJS = shoot.o
+DEPS = shoot.h
 
 PIC = -fPIC
 
@@ -13,6 +13,8 @@ PIC = -fPIC
 harm: harm.o $(OBJS)
 	$(CC) $(CFLAGS)  $(PIC) -Wall $(INCLUDE)  $^ -o $@ $(LOADLIBES)
 
+morse2: morse2.o $(OBJS)
+	$(CC) $(CFLAGS)  $(PIC) -Wall $(INCLUDE)  $^ -o $@ $(LOADLIBES)
 
 %:%.o $(OBJS)#	 $(DEPS)
 	$(CC) $(CFLAGS)  $(PIC) -Wall $(INCLUDE)  $^   -o $@ $(LOADLIBES)

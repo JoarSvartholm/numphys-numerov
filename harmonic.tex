@@ -7,4 +7,29 @@ Consider now the potential of an harmonic oscillator
   \mathcal V(x) = \frac{m \omega^2}{2}x^2.
 \end{equation}
 
-We will now find the wave function for the four first eigenstates using simulation units $\hbar = m = \omega = 1$. That is, for $E= \{0.5,1.5,2.5,3.5\}$. 
+We will now find the wave function for the four first eigenstates using simulation units $\hbar = m = \omega = 1$. That is, for $E= \{0.5,1.5,2.5,3.5\}$. Doing so using $Y_0 = 0$ and $Y_1 = 10^{-12}$ and normalizing the wavefunctions yields Fig. \ref{fig:harm-Eigenstates}. As one can see in the figure the number of nodes of the wavefunction increases linearly with the state number. In the simulation, it does not matter what initial condition is used for $Y_1$. This can be shown by changing this to $Y_1 = 10^{-8}$ and recomputing the wavefunction for the ground state. Since the wavefunctions are normalized the two solutions will be identical. This is shown in Fig. \ref{fig:harm-comp}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/harm-Eigenstates}
+  \caption{The first four eigenstates of the harmonic oscillator}
+  \label{fig:harm-Eigenstates}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/harm-comparison}
+  \caption{Two solutions of tha wavefunction for the ground state using different initial condition $Y_1$.}
+  \label{fig:harm-comp}
+\end{figure}
+
+When doing these computations, Numerovs method is used from the left and from the right and the solution is matched in the middle. If it was only applied from the left the solution to the first eigenstate would blow up near the right boundary. This is shown in Fig. \ref{fig:harm-blowup}. In order to figure out why this is happening we must look at the analytic solution of TISE. In fact, there are two solutions, $\Psi_{01} = C_1 e^{-\alpha x^2 /2}$ and $\Psi_{02} = C_2 e^{\alpha x^2 /2}$, but for physical reasons $\Psi_{02}$ is neglected since it cannot be normalized. When simulating, we probably get a solution that is the superposition of the two, but where $C_2$ is really small and unnoticable for small $x$. Thus for large $x$ when simulation from one direction only, this solution will take over. As one can see in Fig. \ref{fig:harm-blowup} an exponential of this form fits almost perfectly to the right side of the numerical solution using this method. This explaines the odd behavior of the numerical solution.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/harm-blowup}
+  \caption{Ground state wavefunction when only computing from the left.}
+  \label{fig:harm-blowup}
+\end{figure}
+
+\clearpage
