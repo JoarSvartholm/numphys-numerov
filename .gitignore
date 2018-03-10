@@ -13,6 +13,7 @@
 *.dvi
 *.toc
 **.pdf
+!main.pdf
 *.o
 code/*.o
 inertia
