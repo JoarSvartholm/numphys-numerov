@@ -24,8 +24,10 @@ int main(int argc, char const *argv[]) {
   s.x1 = 3e-10;
   s.Y0 = 0;
   s.Y01 = 1e-12;
-  s.N = 800;
+  s.N = 500;
   s.h = (s.x1-s.x0)/(2*s.N);
+  s.NL = 350;
+  s.NR = 650;
 
 
   double psi[2*s.N+1],psivec[4];
@@ -33,7 +35,8 @@ int main(int argc, char const *argv[]) {
 
 
   //Input control
-  p.E = hbar*p.a*sqrt(0.5*p.EB/p.mu)*0.5;
+  //p.E = hbar*p.a*sqrt(0.5*p.EB/p.mu);
+  p.E = 2.88015e-20;
   //if((int)p.E%2)  a = -1; else a = 1;
 
   shoot(&p,&s,psi,psivec);
@@ -62,7 +65,7 @@ int main(int argc, char const *argv[]) {
 
   //Print result
   for(int i=0;i<2*s.N+1;i++){
-    printf("%e\n", psi[i] );
+    //printf("%e\n", psi[i] );
   }
 
 

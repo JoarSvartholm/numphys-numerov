@@ -5,7 +5,7 @@ typedef struct {
 
 typedef struct{
   double Y0,Y01,x0,x1,h;
-  int N;
+  int N,NL,NR;
 }simpars;
 
 
