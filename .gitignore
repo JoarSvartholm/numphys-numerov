@@ -16,7 +16,6 @@
 !main.pdf
 *.o
 code/*.o
-inertia
 morse.c
 morse.dSYM
 morse

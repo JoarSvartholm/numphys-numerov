@@ -9,4 +9,4 @@ typedef struct{
 }simpars;
 
 
-void shoot(parameters *p,simpars *s, double *psi,double *psivec);
+void shoot(parameters *p,simpars *s, double *psi,double *psivec,double E);

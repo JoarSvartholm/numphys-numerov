@@ -7,7 +7,7 @@ Let us now consider the Morse potential
   \mathcal V(R) = E_B \left[ 1-e^{-a(R-R_e)} \right]^2
 \end{equation}
 
-where is the distance between two atoms, $R_e$ is the equillibrium distance, $E_B$ is the binding energy and $a$ is a scaling constant for the bond stiffness. In the center of mass frame, it is better to use spherical coordinates for the wave function, $\Psi(\m R) = \Psi(R)Y(\theta,\phi)$. Taking the first orbital $Y = Y_0^0 = 1/\sqrt{4\pi}$, the problem reduces to a one dimensional problem since the orbital derivatives in the spherical laplacian derives to zero. Using the substitution $\psi (R) = R\Psi(R)$, TISE will reduce to
+where $R$ is the distance between two atoms, $R_e$ is the equillibrium distance, $E_B$ is the binding energy and $a$ is a scaling constant for the bond stiffness. In the center of mass frame, it is better to use spherical coordinates for the wave function, $\Psi(\m R) = \Psi(R)Y(\theta,\phi)$. Taking the first orbital $Y = Y_0^0 = 1/\sqrt{4\pi}$, the problem reduces to a one dimensional problem since the orbital derivatives in the spherical laplacian derives to zero. Using the substitution $\psi (R) = R\Psi(R)$, TISE will reduce to
 
 \begin{equation}
   \label{eq:spherTISE}
@@ -16,7 +16,7 @@ where is the distance between two atoms, $R_e$ is the equillibrium distance, $E_
 
 where $\mu$ is the reduced mass and $\mathcal V(R)$ is the potential in Eq. \eqref{eq:morse}.
 
-Since the energy levels are not known in opposite to the harmonic potential a good guess for the energy levels are needed in order to find the correct eigen energies and its corresponding wavefunction. In order to do that we make a Taylor expansion of Eq. \eqref{eq:morse} around the equillibrium distance $R_e$
+Since the energy levels are not known in opposite to the case with the harmonic potential, a good guess for the energy levels is needed in order to find the correct eigenenergies and its corresponding wavefunction. In order to do that we make a Taylor expansion of Eq. \eqref{eq:morse} around the equillibrium distance $R_e$
 
 \begin{equation}
   \label{eq:taylor}
@@ -69,3 +69,27 @@ The ground state energy and the spacing is thus
     \Delta \tilde{E} & = \hbar a \sqrt{\frac{2 E_B}{\mu}}
   \end{split}
 \end{equation*}
+
+When solving this for the first 6 eigenstates, using the newton raphson algorithm to find the correct eigenenergy, the wavefunctions shown in Fig. \ref{fig:morse-Eigenstates} are obtained. The corresponding energies for these states are found in Tab. \ref{tab:morse-eigeneneries}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/morse-Eigenstates}
+  \caption{The six first eigenstates of the Morse potential.}
+  \label{fig:morse-Eigenstates}
+\end{figure}
+
+\begin{table}[h]
+\centering
+  \caption{Eigenenergies for the first six eigenstates of the Morse potential.}
+  \label{tab:morse-eigeneneries}
+  \begin{tabular}{l|l}
+    State number & Energy [eV] \\ \hline
+    0 & 0.177985 \\
+    1 & 0.523452 \\
+    2 & 0.854915 \\
+    3 & 1.172374 \\
+    4 & 1.475829 \\
+    5 & 1.765281
+  \end{tabular}
+\end{table}
