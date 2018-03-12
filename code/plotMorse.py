@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-savePlots = 1
+savePlots = 0
 showPlots = 1
 
 EB = 7.392*10**-19
@@ -38,5 +38,3 @@ if showPlots:
     plt.show()
 
 print(len(psi0))
-print(psi0[651])
-print(psi0[650])

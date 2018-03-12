@@ -72,7 +72,7 @@ do{
     if(psi[1]<0) printf("%e\n", -psi[i] );
     else printf("%e\n", psi[i] );
   }
-}else printf("n = %d , Eigenenergy = %f eV\n", (int)n,E/e );
+}else printf("n = %d , Eigenenergy = %e eV\n", (int)n,E/e );
 
   return 0;
 }
